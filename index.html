@@ -747,14 +747,6 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Escape')hidePrivacy();
 });
 function dismissCookie(){localStorage.setItem('le_cookie','1');document.getElementById('cookie-banner').classList.add('hidden');}
-function handleForm(e){
-  e.preventDefault();const f=e.target;
-  if(!f.querySelector('#cf-name').value.trim()||!f.querySelector('#cf-email').value.trim()||!f.querySelector('#cf-message').value.trim()||!f.querySelector('#cf-privacy').checked){
-    alert(lang==='nl'?'Vul alle verplichte velden in.':'Please fill in all required fields.');return;
-  }
-  const s=document.getElementById('form-success');s.style.display='block';f.reset();
-  setTimeout(()=>s.style.display='none',6000);
-}
 function showPrivacy(){document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';}
 function hidePrivacy(){document.getElementById('privacy-modal').style.display='none';document.body.style.overflow='';}
 function closePrivacyOnBackdrop(e){if(e.target===document.getElementById('privacy-modal'))hidePrivacy();}
