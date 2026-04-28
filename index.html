@@ -567,223 +567,76 @@ footer{background:var(--text);color:#fff;padding:56px 32px 32px}
 <section id="contact" aria-labelledby="contact-h2">
   <div class="container">
     <p class="section-label" data-nl="Contact" data-en="Contact">Contact</p>
-    <h2 id="contact-h2" data-nl="Plan een gesprek" data-en="Schedule a conversation">
-      Plan een gesprek
-    </h2>
-    <p
-      class="lead"
-      style="margin-top:16px"
-      data-nl="Klaar om te starten? Stuur me een bericht en ik neem binnen 2 werkdagen contact op."
-      data-en="Ready to start? Send me a message and I'll be in touch within 2 working days."
-    >
-      Klaar om te starten? Stuur me een bericht en ik neem binnen 2 werkdagen contact op.
-    </p>
-
+    <h2 id="contact-h2" data-nl="Plan een gesprek" data-en="Schedule a conversation">Plan een gesprek</h2>
+    <p class="lead" style="margin-top:16px" data-nl="Klaar om te starten? Stuur me een bericht en ik neem binnen 2 werkdagen contact op." data-en="Ready to start? Send me a message and I'll be in touch within 2 working days.">Klaar om te starten? Stuur me een bericht en ik neem binnen 2 werkdagen contact op.</p>
     <div class="contact-grid">
       <div>
         <h3 data-nl="Stuur een bericht" data-en="Send a message">Stuur een bericht</h3>
-
-        <form
-          class="contact-form"
-          id="contact-form"
-          action="https://formspree.io/f/mvzdjvnw"
-          method="POST"
-          aria-label="Contactformulier"
-        >
+        <form class="contact-form" id="contact-form" novalidate aria-label="Contactformulier">
           <div class="form-group">
             <label for="cf-name" data-nl="Naam *" data-en="Name *">Naam *</label>
-            <input
-              type="text"
-              id="cf-name"
-              name="name"
-              required
-              autocomplete="name"
-              placeholder="Jouw naam"
-            />
+            <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="Jouw naam">
           </div>
-
           <div class="form-group">
-            <label for="cf-email" data-nl="E-mailadres *" data-en="Email address *">
-              E-mailadres *
-            </label>
-            <input
-              type="email"
-              id="cf-email"
-              name="email"
-              required
-              autocomplete="email"
-              placeholder="jouw@email.nl"
-            />
+            <label for="cf-email" data-nl="E-mailadres *" data-en="Email address *">E-mailadres *</label>
+            <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="jouw@email.nl">
           </div>
-
           <div class="form-group">
-            <label
-              for="cf-phone"
-              data-nl="Telefoonnummer (optioneel)"
-              data-en="Phone number (optional)"
-            >
-              Telefoonnummer (optioneel)
-            </label>
-            <input
-              type="tel"
-              id="cf-phone"
-              name="phone"
-              autocomplete="tel"
-              placeholder="+31 6 ..."
-            />
+            <label for="cf-phone" data-nl="Telefoonnummer (optioneel)" data-en="Phone number (optional)">Telefoonnummer (optioneel)</label>
+            <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder="+31 6 ...">
           </div>
-
           <div class="form-group">
             <label for="cf-subject" data-nl="Onderwerp" data-en="Subject">Onderwerp</label>
             <select id="cf-subject" name="subject">
-              <option value="" data-nl="Kies een onderwerp..." data-en="Choose a subject...">
-                Kies een onderwerp...
-              </option>
-              <option value="intro" data-nl="Gratis kennismaking plannen" data-en="Schedule free intro call">
-                Gratis kennismaking plannen
-              </option>
-              <option value="session" data-nl="Sessie boeken" data-en="Book a session">
-                Sessie boeken
-              </option>
-              <option value="inhouse" data-nl="In-house coaching voor mijn bedrijf" data-en="In-house coaching for my company">
-                In-house coaching voor mijn bedrijf
-              </option>
-              <option value="info" data-nl="Meer informatie" data-en="More information">
-                Meer informatie
-              </option>
-              <option value="other" data-nl="Overig" data-en="Other">
-                Overig
-              </option>
+              <option value="" data-nl="Kies een onderwerp..." data-en="Choose a subject...">Kies een onderwerp...</option>
+              <option value="intro" data-nl="Gratis kennismaking plannen" data-en="Schedule free intro call">Gratis kennismaking plannen</option>
+              <option value="session" data-nl="Sessie boeken" data-en="Book a session">Sessie boeken</option>
+              <option value="inhouse" data-nl="In-house coaching voor mijn bedrijf" data-en="In-house coaching for my company">In-house coaching voor mijn bedrijf</option>
+              <option value="info" data-nl="Meer informatie" data-en="More information">Meer informatie</option>
+              <option value="other" data-nl="Overig" data-en="Other">Overig</option>
             </select>
           </div>
-
           <div class="form-group">
             <label for="cf-message" data-nl="Bericht *" data-en="Message *">Bericht *</label>
-            <textarea
-              id="cf-message"
-              name="message"
-              required
-              rows="4"
-              placeholder="Vertel me over jouw situatie en doelen..."
-            ></textarea>
+            <textarea id="cf-message" name="message" required rows="4" placeholder="Vertel me over jouw situatie en doelen..."></textarea>
           </div>
-
           <div class="form-group">
-            <label
-              style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:.85rem;font-weight:400;color:var(--text-muted)"
-            >
-              <input
-                type="checkbox"
-                id="cf-privacy"
-                name="privacy"
-                required
-                style="margin-top:3px;width:auto;padding:0"
-              />
-              <span
-                data-nl="Ik ga akkoord met de verwerking van mijn gegevens conform de privacyverklaring. *"
-                data-en="I agree to the processing of my data per the privacy statement. *"
-              >
-                Ik ga akkoord met de verwerking van mijn gegevens conform de
-                <a href="#" onclick="showPrivacy();return false;" style="color:var(--green)">
-                  privacyverklaring
-                </a>. *
-              </span>
+            <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:.85rem;font-weight:400;color:var(--text-muted)">
+              <input type="checkbox" id="cf-privacy" name="privacy" required style="margin-top:3px;width:auto;padding:0">
+              <span data-nl="Ik ga akkoord met de verwerking van mijn gegevens conform de <a href='#' onclick='showPrivacy();return false;' style='color:var(--green)'>privacyverklaring</a>. *" data-en="I agree to the processing of my data per the <a href='#' onclick='showPrivacy();return false;' style='color:var(--green)'>privacy statement</a>. *">Ik ga akkoord met de verwerking van mijn gegevens conform de <a href="#" onclick="showPrivacy();return false;" style="color:var(--green)">privacyverklaring</a>. *</span>
             </label>
           </div>
 
-          <!-- Honeypot tegen spam -->
-          <input
-            type="text"
-            name="_gotcha"
-            style="display:none"
-            tabindex="-1"
-            autocomplete="off"
-          />
+          <!-- Succes- en foutmelding -->
+          <div id="form-success" role="alert" style="display:none;background:var(--green-light);border:1px solid var(--green);border-radius:2px;padding:16px;font-size:.9rem;color:var(--green)" data-nl="Bedankt voor je bericht! Ik neem binnen 2 werkdagen contact op." data-en="Thank you for your message! I'll be in touch within 2 working days.">Bedankt voor je bericht! Ik neem binnen 2 werkdagen contact op.</div>
+          <div id="form-error" role="alert" style="display:none;background:#FEF2F2;border:1px solid #FCA5A5;border-radius:2px;padding:16px;font-size:.9rem;color:#DC2626" data-nl="Er ging iets mis. Probeer het opnieuw of stuur een e-mail." data-en="Something went wrong. Please try again or send an email.">Er ging iets mis. Probeer het opnieuw of stuur een e-mail.</div>
 
-          <!-- succesmelding -->
-          <div
-            class="form-success"
-            id="form-success"
-            role="alert"
-            style="display:none;margin-top:16px;"
-            data-nl="Bedankt voor je bericht! Ik neem binnen 2 werkdagen contact op."
-            data-en="Thank you for your message! I'll be in touch within 2 working days."
-          >
-            Bedankt voor je bericht! Ik neem binnen 2 werkdagen contact op.
-          </div>
-
-          <!-- foutmelding -->
-          <div
-            id="form-error"
-            role="alert"
-            style="display:none;margin-top:16px;color:#b00020;font-size:.95rem;"
-          >
-            Er ging iets mis bij het versturen. Probeer het opnieuw.
-          </div>
-
-          <button
-            type="submit"
-            class="btn btn-primary"
-            id="contact-submit-btn"
-            data-nl="Verstuur bericht"
-            data-en="Send message"
-          >
-            Verstuur bericht
-          </button>
+          <button type="submit" id="cf-submit" class="btn btn-primary" data-nl="Verstuur bericht" data-en="Send message">Verstuur bericht</button>
         </form>
       </div>
-
       <div class="contact-info">
         <h3 data-nl="Praktisch" data-en="Practical info">Praktisch</h3>
-
         <div class="contact-detail">
           <div class="contact-detail-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div class="contact-detail-text">
             <strong data-nl="Reactietijd" data-en="Response time">Reactietijd</strong>
-            <span data-nl="Ik reageer binnen 2 werkdagen" data-en="I respond within 2 working days">
-              Ik reageer binnen 2 werkdagen
-            </span>
+            <span data-nl="Ik reageer binnen 2 werkdagen" data-en="I respond within 2 working days">Ik reageer binnen 2 werkdagen</span>
           </div>
         </div>
-
         <div class="contact-detail">
           <div class="contact-detail-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <div class="contact-detail-text">
             <strong data-nl="Sessies" data-en="Sessions">Sessies</strong>
-            <span data-nl="Live of online, 45 minuten, €60 excl. btw" data-en="In-person or online, 45 min, €60 excl. VAT">
-              Live of online, 45 minuten, €60 excl. btw
-            </span>
+            <span data-nl="Live of online, 45 minuten, €60 excl. btw" data-en="In-person or online, 45 min, €60 excl. VAT">Live of online, 45 minuten, €60 excl. btw</span>
           </div>
         </div>
-
         <div class="contact-detail">
           <div class="contact-detail-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-          </div>
-          <div class="contact-detail-text">
-            <strong data-nl="Kennismaking" data-en="Intro call">Kennismaking</strong>
-            <span data-nl="Gratis gesprek van 20 minuten, geen verplichtingen" data-en="Free 20-minute call, no obligation">
-              Gratis gesprek van 20 minuten, geen verplichtingen
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-``
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
 
 <!-- FOOTER -->
 <footer aria-label="Sitenavigatie">
