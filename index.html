@@ -732,6 +732,45 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(c)c.style.display=window.scrollY>200?'inline-flex':'none';
   });
   if(localStorage.getItem('le_cookie'))document.getElementById('cookie-banner').classList.add('hidden');
+
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const f = e.target;
+    const name = f.querySelector('#cf-name').value.trim();
+    const email = f.querySelector('#cf-email').value.trim();
+    const msg = f.querySelector('#cf-message').value.trim();
+    const priv = f.querySelector('#cf-privacy').checked;
+
+    if (!name || !email || !msg || !priv) {
+      alert(lang === 'nl' ? 'Vul alle verplichte velden in.' : 'Please fill in all required fields.');
+      return;
+    }
+
+    const btn = document.getElementById('cf-submit');
+    btn.disabled = true;
+    btn.textContent = lang === 'nl' ? 'Versturen…' : 'Sending…';
+
+    try {
+      const res = await fetch('https://formspree.io/f/mvzdjvnw', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(f)
+      });
+      if (res.ok) {
+        document.getElementById('form-success').style.display = 'block';
+        document.getElementById('form-error').style.display = 'none';
+        f.reset();
+      } else {
+        throw new Error('server error');
+      }
+    } catch {
+      document.getElementById('form-error').style.display = 'block';
+      document.getElementById('form-success').style.display = 'none';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = lang === 'nl' ? 'Verstuur bericht' : 'Send message';
+    }
+  });
 });
 function toggleMenu(){
   const m=document.getElementById('mobile-nav'),b=document.getElementById('hamburger');
@@ -770,5 +809,3 @@ function handleSearch(v){
 function closeSearch(){document.getElementById('search-results').style.display='none';const s=document.getElementById('site-search');if(s)s.value='';}
 document.addEventListener('click',e=>{if(!e.target.closest('#search-bar')&&!e.target.closest('#search-results'))closeSearch();});
 </script>
-</body>
-</html>
